@@ -1,0 +1,28 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+{% block head %}
+{{super()}}
+<link rel="icon" type="image/x-icon" href="static/favicon.ico"/>
+<script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+{% endblock %}
+{% block title %}Delete a Cafe{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <h1>Delete the cafe into the database</h1>
+            <!-- This is where your WTForm will go -->
+            {{ wtf.quick_form(form, novalidate=True) }}
+            <p class="space-above"><a href="{{ url_for('all_cafes') }}">See all cafes</a></p>
+
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</div>
+{% endblock %}
