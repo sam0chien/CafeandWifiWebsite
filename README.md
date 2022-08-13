@@ -1,1 +1,2 @@
-# JUST A CAFE AND WIFI WEBSITE
+# Cafe and Wifi Website
+Flask practice.
